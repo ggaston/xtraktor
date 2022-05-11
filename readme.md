@@ -13,6 +13,7 @@ TODO:
 cd [cloned repo folder]
 npm i -g
 xtrakt comments [input file] [output folder]
+```
 
 ## Example
 
