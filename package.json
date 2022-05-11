@@ -1,9 +1,9 @@
 {
-  "name": "divid",
+  "name": "xtraktor",
   "version": "1.0.0",
   "description": "",  
   "main": "bin/index.js",
-  "bin" : {"divid": "./bin/index.js"},
+  "bin" : {"xtrakt": "./bin/index.js"},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

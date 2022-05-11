@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { Transform } = require("stream");
 
-const extract = function (filePath, dir = './out') {
+const extractComments = function (filePath, dir) {
     const extension = filePath.split('.').pop();
 	const readableStream = fs.createReadStream(filePath, "utf-8");
     const regex = /(\/\*\*.*?\*\*\/)/
@@ -15,7 +15,7 @@ const extract = function (filePath, dir = './out') {
                 content.push(component)
                 this.push(component)
             });
-            console.log('ext: ' + extension)
+
             // Write files
             const files = joinPears(content)
             
@@ -23,9 +23,9 @@ const extract = function (filePath, dir = './out') {
                 const filename = dir + '/' + file.filename + '.' + extension
                 
                 // keep it for copy&paste imports
-                console.log(`@import url("${filename}")`)
+                console.log(`@import url("${filename}");`)
 
-                fs.writeFileSync('./out/' + file.filename + '.css', file.data , 'utf-8');
+                fs.writeFileSync(filename, file.data , 'utf-8');
             })
             callback()
         }
@@ -59,4 +59,4 @@ const extract = function (filePath, dir = './out') {
     });
 };
 
-module.exports = extract;
+module.exports = extractComments;

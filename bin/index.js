@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 const read = require('../src/read');
-const extract = require('../src/write');
+const extractComments = require('../src/extract-comments');
 const {getHelpText} = require('../src/helpTexts')
 
 const args = process.argv;
-const commands = ['read', 'extract'];
+const commands = ['read', 'comments'];
 
 
 let command = '';
@@ -27,7 +27,7 @@ else {
             read(args[3])
             break;
         case 1:
-            extract(args[3], args[4])
+            extractComments(args[3], args[4])
             break;
         default:
             console.log('You entered a wrong command. See help text below for supported functions');
