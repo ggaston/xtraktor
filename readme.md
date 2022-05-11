@@ -4,8 +4,8 @@ Generate separate component files from oldschool CSS files (all style declaratio
 
 TODO:
 
-* [/] Extraction on comment section `/** ... **/`
-* [] Extraction based on class name
+- [x] Extraction on comment section `/** ... **/`
+- [ ] Extraction based on class name
 
 ## Usage
 
